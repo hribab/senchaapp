@@ -1,0 +1,40 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "textdata": [
+            "{'id':'','val':''}"
+        ],
+        "models": [
+            "orders",
+            "products"
+        ],
+        "stores": [
+            "orders",
+            "products",
+            "category"
+        ],
+        "views": [
+            "MyPanel"
+        ],
+        "controllers": [
+            "MyController"
+        ],
+        "name": "MyApp"
+    },
+    "configAlternates": {
+        "textdata": "array"
+    },
+    "designerId": "application",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "textdata",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,796 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyPanel",
+        "designer|initialView": true
+    },
+    "designerId": "0fce3ca9-3f89-44f8-8dde-8d048432cba1",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "100%",
+                "hidden": true,
+                "id": "tabpanel"
+            },
+            "designerId": "dadb2b85-f5a4-47da-9fef-b57749f004d9",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "orders",
+                        "iconCls": "more",
+                        "height": "100%"
+                    },
+                    "designerId": "fcb260c0-9b6e-4365-a901-dde846ed2d95",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "refresh",
+                                "ui": "confirm",
+                                "text": "refresh"
+                            },
+                            "designerId": "78264aa6-b6d6-422d-91b6-31f789d7cfe5",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton9Tap",
+                                        "implHandler": [
+                                            "\r",
+                                            "var u=Ext.getCmp('user').getValue();\r",
+                                            "\r",
+                                            "Ext.Msg.alert(\"hi\", u);\r",
+                                            "\r",
+                                            "//var store = Ext.getStore('MyJsonPStore');\r",
+                                            "//store.load();\r",
+                                            "//store.getProxy().clear();\r",
+                                            "//store.data.clear();\r",
+                                            "Ext.getStore('orders').data.clear();\r",
+                                            "Ext.getStore('orders').getProxy().setExtraParams({id:u});\r",
+                                            "Ext.getStore('orders').load();\r",
+                                            "Ext.getStore('orders').sync();"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "dd949aa6-b9b7-4884-bcc5-82a703076fb3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "100%",
+                                "itemId": "mylist",
+                                "width": "100%",
+                                "store": "orders"
+                            },
+                            "designerId": "10575dcc-0f04-40bd-b883-c9ede7e31114",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "implHandler": [
+                                            "<tpl if=\"boolean == 'true'\">\r",
+                                            "    \r",
+                                            "<table border=\"3\" bordercolor=\"blue\"  align=\"center\">\r",
+                                            "<tr>\r",
+                                            "  <td><ul><li>Name:{customername}</li>\r",
+                                            "      <li>Email:{email}</li>\r",
+                                            "      <li>Address: abc,123,abc,123,adfadsfasdfsadfas,fasdf,asdf,asd,fasdf</li>\r",
+                                            "      </ul>\r",
+                                            "      \r",
+                                            "    \r",
+                                            "    </td>\r",
+                                            "    <td><font size=\"5\" color=\"blue\" >{totalprice} ({totalproducts})</font></td>\r",
+                                            "    \r",
+                                            "    </tr>\r",
+                                            "    \r",
+                                            "    </tpl>\r",
+                                            "    \r",
+                                            "    <tpl if=\"p == 'true'\">\r",
+                                            " <table width=\"100%\" align=\"center\">\r",
+                                            "<tr>\r",
+                                            "  <td>{productname}</td>\r",
+                                            "  <td><font size=\"5\" color=\"blue\" >{productprice} ({productquantity})</font></td>\r",
+                                            "    </tr>\r",
+                                            "        </table>\r",
+                                            "    </tpl>\r",
+                                            "    \r",
+                                            "    <tpl if=\"b == 'true'\">     \r",
+                                            "    {button}\r",
+                                            "     </tpl>\r",
+                                            ""
+                                        ],
+                                        "designer|displayName": "itemTpl"
+                                    },
+                                    "designerId": "915ac4db-637e-4158-aff1-1ba2743d8d14"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMylistItemTap",
+                                        "implHandler": [
+                                            "var val=record.get('button');\r",
+                                            "\r",
+                                            "if(val)\r",
+                                            "{\r",
+                                            "    console.log('button taped');\r",
+                                            "    var strtind=val.indexOf(\"id\")+4;\r",
+                                            "    var endind=strtind;\r",
+                                            "    while(val.charAt(endind)!='-')\r",
+                                            "    endind++;\r",
+                                            "    var data=val.substr(strtind,endind-strtind);\r",
+                                            "    var n=val.charAt(endind+1);\r",
+                                            "    var i=index+1,j=0;\r",
+                                            "    Ext.getCmp('ext-simplelistitem-'+i).hide();\r",
+                                            "    i--;\r",
+                                            "    for(;j<=n;j++,i--)\r",
+                                            "    {\r",
+                                            "        //var btn=Ext.getCmp('ext-simplelistitem-'+i);\r",
+                                            "        //console.log(btn);\r",
+                                            "        Ext.getCmp('ext-simplelistitem-'+i).hide();\r",
+                                            "    }\r",
+                                            "\r",
+                                            "\r",
+                                            "    MyApp.app.getController('MyController').getid(data);\r",
+                                            "\r",
+                                            "    Ext.Msg.alert(\"Good Job, Order ID is\", data);\r",
+                                            "\r",
+                                            "}"
+                                        ],
+                                        "name": "itemtap"
+                                    },
+                                    "designerId": "8254ec9b-b51d-4c3a-aa4e-af773073caf5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "products",
+                        "iconCls": "more"
+                    },
+                    "designerId": "49efbb39-53b1-49da-a420-5e20c26d7536",
+                    "cn": [
+                        {
+                            "type": "Ext.TitleBar",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "docked": "top"
+                            },
+                            "designerId": "f5f3bd68-1c09-407c-a21d-d7bb110535de",
+                            "cn": [
+                                {
+                                    "type": "Ext.field.Search",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "docked": "top",
+                                        "itemId": "mysearchfield",
+                                        "maxWidth": "",
+                                        "width": "100%",
+                                        "label": "search",
+                                        "labelWidth": "20%",
+                                        "autoComplete": true
+                                    },
+                                    "designerId": "1bd624f8-82d0-4f5a-abf8-bf37d4979140",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMysearchfieldAction",
+                                                "implHandler": [
+                                                    "var value = textfield.getValue(),  \r",
+                                                    "store = Ext.getStore('products');    //  getting the store that drives the contact list  \r",
+                                                    "// Ext.Msg.alert(\"hi\");\r",
+                                                    "//first clear any current filters on thes tore  \r",
+                                                    "store.clearFilter();  \r",
+                                                    "\r",
+                                                    "//check if a value is set first, as if it isnt we dont have to do anything  \r",
+                                                    "if (value) {  \r",
+                                                    "\r",
+                                                    "    console.log(value);\r",
+                                                    "\r",
+                                                    "    //the user could have entered spaces, so we must split them so we can loop through them all  \r",
+                                                    "    var searches = value.split(' '),  \r",
+                                                    "    regexps = [],  \r",
+                                                    "    i;  \r",
+                                                    "\r",
+                                                    "    //loop them all  \r",
+                                                    "    for (i = 0; i < searches.length; i++) {  \r",
+                                                    "        //if it is nothing, continue  \r",
+                                                    "        if (!searches[i]) continue;  \r",
+                                                    "\r",
+                                                    "        console.log(searches[i]);\r",
+                                                    "\r",
+                                                    "        //if found, create a new regular expression which is case insenstive  \r",
+                                                    "        regexps.push(new RegExp(searches[i], 'i'));  \r",
+                                                    "    }  \r",
+                                                    "\r",
+                                                    "\r",
+                                                    "\r",
+                                                    "    //now filter the store by passing a method  \r",
+                                                    "    //the passed method will be called for each record in the store  \r",
+                                                    "    Ext.getStore('products').filter(function(record) {  \r",
+                                                    "\r",
+                                                    "\r",
+                                                    "        if(record.get('productname')){\r",
+                                                    "\r",
+                                                    "            var matched = [];  \r",
+                                                    "            console.log(record); \r",
+                                                    "\r",
+                                                    "            //loop through each of the regular expressions  \r",
+                                                    "            for (i = 0; i < regexps.length; i++) {  \r",
+                                                    "\r",
+                                                    "                var search = regexps[i],  \r",
+                                                    "                didMatch = record.get('productname').match(search);\r",
+                                                    "                console.log(didMatch);\r",
+                                                    "\r",
+                                                    "                //if it matched the first or last name, push it into the matches array   \r",
+                                                    "\r",
+                                                    "                matched.push(didMatch);\r",
+                                                    "\r",
+                                                    "\r",
+                                                    "            }\r",
+                                                    "            //if nothing was found, return false (dont so in the store)                 \r",
+                                                    "\r",
+                                                    "\r",
+                                                    "\r",
+                                                    "            if (regexps.length > 1 && matched.indexOf(false) != -1) {  \r",
+                                                    "                return false;  \r",
+                                                    "            } else {  \r",
+                                                    "                //else true true (show in the store) \r",
+                                                    "                console.log(matched[0]);\r",
+                                                    "                return matched[0];  \r",
+                                                    "            }  \r",
+                                                    "\r",
+                                                    "\r",
+                                                    "        }\r",
+                                                    "    });  \r",
+                                                    "}  \r",
+                                                    ""
+                                                ],
+                                                "name": "action"
+                                            },
+                                            "designerId": "d5cb2c86-6bb4-4771-af09-af3a2ac8d694"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "100%",
+                                "itemId": "mylist1",
+                                "store": "products"
+                            },
+                            "designerId": "311155e5-8d15-4ea6-ba59-4ab24ab25e45",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "implHandler": [
+                                            "<tpl if=\"pb == 'true'\">\r",
+                                            " \r",
+                                            "    <table width=\"100%\" align=\"center\">\r",
+                                            "<tr>\r",
+                                            "    <td rowspan=\"2\">{productname}</td>\r",
+                                            "    <td> {productprice} ({productquantity}) </td>\r",
+                                            "        </tr>\r",
+                                            " \t\r",
+                                            "    </table>\r",
+                                            "    \r",
+                                            "    \r",
+                                            "</tpl>\r",
+                                            "<tpl if=\"boolean == 'true'\">\r",
+                                            "    <p align=\"center\"><font size=\"5\" color=\"blue\"> {category} ({total}) </font></p>\r",
+                                            " \r",
+                                            "</tpl>\r",
+                                            "\r",
+                                            "<tpl if=\"ps == 'true'\">\r",
+                                            "    <table width=\"100%\" align=\"center\">\r",
+                                            "<tr>\r",
+                                            "    <td>{setprice}</td>\r",
+                                            "    <td>{setquantity}</td>\r",
+                                            "        </tr>\r",
+                                            "\r",
+                                            "    </table>\r",
+                                            "    \r",
+                                            "   \r",
+                                            "</tpl>\r",
+                                            "\r",
+                                            "<tpl if=\"b == 'true'\">\r",
+                                            "   {button}\r",
+                                            "</tpl>\r",
+                                            "         \r",
+                                            "    \r",
+                                            "         \r",
+                                            ""
+                                        ],
+                                        "designer|displayName": "itemTpl"
+                                    },
+                                    "designerId": "8b4dd244-d767-4adc-9ce9-4ddb810d1c83"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMylist1ItemTap",
+                                        "implHandler": [
+                                            "var val=record.get('button');\r",
+                                            "\r",
+                                            "\r",
+                                            "if(val)\r",
+                                            "{\r",
+                                            "\r",
+                                            "    var strtind=val.indexOf(\"id\")+4;\r",
+                                            "    var endind=strtind;\r",
+                                            "    while(val.charAt(endind)!='-')\r",
+                                            "    endind++;\r",
+                                            "\r",
+                                            "    var data=val.substr(strtind,endind-strtind);\r",
+                                            "\r",
+                                            "    var strtind2=val.indexOf(\"name\")+6;\r",
+                                            "    var endind2=strtind2;\r",
+                                            "    while(val.charAt(endind2)!='-')\r",
+                                            "    endind2++;\r",
+                                            "\r",
+                                            "    var data2=val.substr(strtind2,endind2-strtind2);\r",
+                                            "\r",
+                                            "    if(typeof MyApp.app.textdata[data2] == 'undefined' || typeof MyApp.app.textdata[data2-1] == 'undefined')\r",
+                                            "    Ext.Msg.alert(\"Please enter some value for this product\");\r",
+                                            "\r",
+                                            "\r",
+                                            "    console.log(\"product id:\"+data+\"array ind\"+data2);\r",
+                                            "    MyApp.app.getController('MyController').updateproduct(data, data2);\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "}"
+                                        ],
+                                        "name": "itemtap"
+                                    },
+                                    "designerId": "cc717fa5-4dcc-4098-8575-a22f44b43855"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "add product",
+                        "iconCls": "more"
+                    },
+                    "designerId": "657f2beb-9e1a-4dec-ac4f-5143d2203bf6",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "100%",
+                                "enctype": [
+                                    "multipart/form-data"
+                                ]
+                            },
+                            "designerId": "9490a707-9733-4f8f-ba40-d2a2bf97d820",
+                            "cn": [
+                                {
+                                    "type": "Ext.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "productname",
+                                        "label": "name",
+                                        "name": "productname"
+                                    },
+                                    "designerId": "08f6d941-704f-444e-9638-e6b9caf0e52f"
+                                },
+                                {
+                                    "type": "Ext.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "productprice",
+                                        "label": "price",
+                                        "name": "productprice"
+                                    },
+                                    "designerId": "13d3d89c-91a1-4ed9-bf00-79bfd07499ad"
+                                },
+                                {
+                                    "type": "Ext.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "productquantity",
+                                        "label": "quantity",
+                                        "name": "productquantity"
+                                    },
+                                    "designerId": "9c9337d2-014e-4c7a-ab5c-c89f5951074b"
+                                },
+                                {
+                                    "type": "Ext.field.Select",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "category",
+                                        "itemId": "myselectfield",
+                                        "label": "category",
+                                        "hiddenName": "pi"
+                                    },
+                                    "designerId": "02139d0d-58b7-47ec-9fc1-05815382d4ca",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onCategoryPainted",
+                                                "implHandler": [
+                                                    "var u=Ext.getCmp('user').getValue();\r",
+                                                    "console.log(u);\r",
+                                                    "var stre=Ext.getStore('category');\r",
+                                                    "//stre.getProxy().setExtraParams({id:u});\r",
+                                                    "//Ext.getStore('MyJsonPStore1').getProxy().setExtraParams({id:u});\r",
+                                                    "//Ext.getStore('MyJsonPStore1').load();\r",
+                                                    "//Ext.getStore('MyJsonPStore1').sync();\r",
+                                                    "\r",
+                                                    "stre.load();\r",
+                                                    "stre.sync();\r",
+                                                    "var jsondata=[];\r",
+                                                    "var num=stre.data.items.length;\r",
+                                                    "console.log(num);\r",
+                                                    "for(var ic = 0;ic<num;ic++){\r",
+                                                    "    var text=stre.getAt(ic).get('text');\r",
+                                                    "    var value=stre.getAt(ic).get('value');\r",
+                                                    "    var data={};\r",
+                                                    "    data.text=text;\r",
+                                                    "    data.value=value;\r",
+                                                    "    jsondata.push(data);    \r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "//var jsonarr=JSON.parse(JSON.stringify(jsondata));\r",
+                                                    "//console.log(jsonarr);\r",
+                                                    "var slct=Ext.getCmp('category');\r",
+                                                    "slct.setOptions(jsondata);\r",
+                                                    ""
+                                                ],
+                                                "name": "painted"
+                                            },
+                                            "designerId": "231062b8-2980-4568-af0e-862830c8613e"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.field.File",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "file",
+                                        "designer|displayName": "product image",
+                                        "label": "image",
+                                        "name": "file"
+                                    },
+                                    "designerId": "220df77b-849c-44b2-b1f5-04715de6dd7a"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "add product"
+                                    },
+                                    "designerId": "0ded5e0f-bcdd-4fc6-9953-6ffb99a43a0e",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "handler",
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "implHandler": [
+                                                    "this.up().submit({\r",
+                                                    "    url: 'http://ec2-54-201-188-61.us-west-2.compute.amazonaws.com/mobileapp/addproduct.php',\r",
+                                                    "    method: 'POST',\r",
+                                                    "    waitTitle: 'Connecting',\r",
+                                                    "    waitMsg: 'Sending data...',\r",
+                                                    "\r",
+                                                    "    success: function (form, result) {\r",
+                                                    "        //debugger; //This block of code is not executing even after JSON response\r",
+                                                    "        var jsonoutput = Ext.decode(result);  // json parsing\r",
+                                                    "        console.log(jsonoutput);   \r",
+                                                    "        Ext.Msg.alert(\"Success\");\r",
+                                                    "\r",
+                                                    "    },\r",
+                                                    "    failure: function (form, result) {//This block of code is not executing even after JSON response\r",
+                                                    "        Ext.Msg.alert('failure');\r",
+                                                    "        console.log(result);\r",
+                                                    "    }\r",
+                                                    "\r",
+                                                    "\r",
+                                                    "\r",
+                                                    "});\r",
+                                                    ""
+                                                ]
+                                            },
+                                            "designerId": "d3fe51b5-08be-40fe-80df-349da3746966"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Bar",
+                    "reference": {
+                        "name": "tabBar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "bottom"
+                    },
+                    "designerId": "4fc9c85a-0faa-4aac-b5fa-d4843415c20b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "hidden": false,
+                "id": "title",
+                "title": "Manage Your Store"
+            },
+            "designerId": "56402f97-8a2e-474d-ba72-4151e7dcad8f"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": 10,
+                "docked": "top",
+                "hidden": false,
+                "id": "user",
+                "designer|displayName": "user",
+                "label": "Store",
+                "name": "user",
+                "placeHolder": ""
+            },
+            "designerId": "92d34d1f-3d12-4f25-95d9-a3100833942c"
+        },
+        {
+            "type": "Ext.field.Password",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": 3,
+                "docked": "top",
+                "hidden": false,
+                "id": "password",
+                "designer|displayName": "password",
+                "label": "Password",
+                "name": "password",
+                "placeHolder": ""
+            },
+            "designerId": "225ec6f6-26f4-4788-90b5-e0b4c8007818"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "height": 48,
+                "hidden": false,
+                "id": "login",
+                "itemId": "mybutton8",
+                "minWidth": "70%",
+                "text": "login"
+            },
+            "designerId": "732efacd-af1d-4773-a6aa-36ed14b5c6fb",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMybutton8Tap",
+                        "implHandler": [
+                            "var u=Ext.getCmp('user').getValue();\r",
+                            "var p=Ext.getCmp('password').getValue();\r",
+                            "if( u && p){\r",
+                            "    var jsondata={};\r",
+                            "    jsondata.un=u;\r",
+                            "    jsondata.pd=p;\r",
+                            "    Ext.Ajax.request({\r",
+                            "        url:'http://ec2-54-201-188-61.us-west-2.compute.amazonaws.com/mobileapp/login.php',\r",
+                            "        method:'POST',\r",
+                            "        params:jsondata,\r",
+                            "        success: function(response){\r",
+                            "            var t=(response.responseText).valueOf();\r",
+                            "\r",
+                            "            if(t.match(\"fail\")) Ext.Msg.alert(\"Please enter correct user and Password\");\r",
+                            "\r",
+                            "            else {        \r",
+                            "                console.log('success'); \r",
+                            "\r",
+                            "                Ext.getCmp('login').hide();\r",
+                            "                Ext.getCmp('user').hide();\r",
+                            "                Ext.getCmp('password').hide();\r",
+                            "                Ext.getCmp('title').hide();\r",
+                            "\r",
+                            "\r",
+                            "                // load orders to the jsonP store\r",
+                            "                Ext.getStore('orders').getProxy().setExtraParams({id:u});\r",
+                            "                Ext.getStore('products').getProxy().setExtraParams({id:u});\r",
+                            "                Ext.getStore('category').getProxy().setExtraParams({id:u});\r",
+                            "                Ext.getStore('orders').load();\r",
+                            "                Ext.getStore('products').load();\r",
+                            "                Ext.getStore('category').load();\r",
+                            "               \r",
+                            "                Ext.getCmp('tabpanel').show();\r",
+                            "\r",
+                            "\r",
+                            "\r",
+                            "                console.log(\"store is loaded\");\r",
+                            "\r",
+                            "\r",
+                            "            }\r",
+                            "\r",
+                            "        },\r",
+                            "        failure: function(response){\r",
+                            "            console.log('failure');\r",
+                            "            Ext.Msg.alert(\"check the connection\");\r",
+                            "        }\r",
+                            "\r",
+                            "\r",
+                            "\r",
+                            "    });\r",
+                            "\r",
+                            "}\r",
+                            "\r",
+                            "else { Ext.Msg.alert(\"dude, what are you doing?\");}\r",
+                            ""
+                        ],
+                        "name": "tap"
+                    },
+                    "designerId": "871a45c9-f8e9-4b4d-ac99-81460bbc8662"
+                }
+            ]
+        }
+    ]
+}

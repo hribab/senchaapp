@@ -1,0 +1,42 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "orders",
+        "storeId": "orders",
+        "designer|userClassName": "orders"
+    },
+    "designerId": "335c0b22-cbef-42bf-a312-313182cf3f53",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "http://ec2-54-201-188-61.us-west-2.compute.amazonaws.com/mobileapp/orders.php"
+            },
+            "designerId": "48a9c344-ab97-429e-bead-887fda0acc42",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "result"
+                    },
+                    "designerId": "0753df20-4f6e-476c-ad48-18313b29ccf0"
+                }
+            ]
+        }
+    ]
+}

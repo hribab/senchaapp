@@ -1,0 +1,45 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "products",
+        "storeId": "products",
+        "designer|userClassName": "products"
+    },
+    "designerId": "be0fa5a9-1454-429c-8616-8dfb80e4b0d6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "extraParams": [
+                    "{id:'store_kukatpalli'}"
+                ],
+                "url": "http://ec2-54-201-188-61.us-west-2.compute.amazonaws.com/mobileapp/products.php"
+            },
+            "designerId": "0e452782-d76b-4ced-b195-9dd72612368e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "result"
+                    },
+                    "designerId": "c334cb9a-8c97-468c-a845-7d0ab8917017"
+                }
+            ]
+        }
+    ]
+}

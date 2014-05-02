@@ -1,0 +1,80 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "storeId": "category",
+        "designer|userClassName": "category"
+    },
+    "designerId": "46b41e16-2979-4590-9432-52cca5932620",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "extraParams": [
+                    "{id:'store_kukatpalli'}"
+                ],
+                "url": "http://ec2-54-201-188-61.us-west-2.compute.amazonaws.com/mobileapp/category.php"
+            },
+            "designerId": "6c5c5810-b7af-4ce7-8a4f-c59b3b06375b",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "result"
+                    },
+                    "designerId": "85091252-236d-4003-96d0-944c7f3f30ca"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "designerId": "a4a97114-d301-4c4b-8cff-29e7973ee8fb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text"
+            },
+            "designerId": "a653d051-ded5-4bdc-8a44-eb77c670e4f7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "value"
+            },
+            "designerId": "9588fdf7-069f-4ad4-ba13-9ba0990aac4b"
+        }
+    ]
+}

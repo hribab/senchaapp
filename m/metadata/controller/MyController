@@ -1,0 +1,122 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController"
+    },
+    "designerId": "a39c5cc4-e29d-40af-9156-21f22f05a720",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "func1",
+                "designer|params": [
+                    "val",
+                    "id"
+                ],
+                "implHandler": [
+                    "console.log(\"val :\"+val+\"id :\"+id);\r",
+                    "\r",
+                    "MyApp.app.textdata[id]=val;\r",
+                    "\r",
+                    "console.log(\"array defined\"+MyApp.app.textdata);\r",
+                    "//if(name==\"price\"){ gprice=val;}\r",
+                    "//if(name==\"qty\"){gqty=val;}"
+                ]
+            },
+            "designerId": "3e02c333-b7f8-4230-bf43-4b62e6243831"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "updateproduct",
+                "designer|params": [
+                    "id",
+                    "ar"
+                ],
+                "implHandler": [
+                    "\r",
+                    "console.log(\"id is: \"+id+\"  arraya: \"+ar);\r",
+                    "console.log(MyApp.app.textdata);\r",
+                    "var jsondata={};\r",
+                    "jsondata.price= MyApp.app.textdata[ar-1];\r",
+                    "jsondata.qty= MyApp.app.textdata[ar];\r",
+                    "jsondata.id=id;\r",
+                    "\r",
+                    "console.log(\"price: \"+jsondata.price+\"  qty: \"+jsondata.qty+\"  id:\"+jsondata.id);\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "    method: 'POST',\r",
+                    "    params:jsondata,\r",
+                    "    url:'http://ec2-54-201-188-61.us-west-2.compute.amazonaws.com/mobileapp/updateproduct.php',\r",
+                    "\r",
+                    "    success : function(response){\r",
+                    "        console.log(\"data is sent to file\");\r",
+                    "        console.log(response.responseText);\r",
+                    "        // Ext.Msg.alert(\"Product updated\");\r",
+                    "    },\r",
+                    "    failure: function(response){\r",
+                    "        Ext.Msg.alert(\"Oops, product not updated: Enter again\");\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "9c120ea5-e915-43f1-aee6-e65aad09fbb4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getid",
+                "designer|params": [
+                    "data"
+                ],
+                "implHandler": [
+                    "Ext.Ajax.request({\r",
+                    "    url: 'http://ec2-54-201-188-61.us-west-2.compute.amazonaws.com/mobileapp/updateorder.php',\r",
+                    "    method: 'POST',\r",
+                    "    params: {\r",
+                    "        id: data\r",
+                    "    },\r",
+                    "\r",
+                    "    success: function(response) {\r",
+                    "        // Ext.Msg.alert(\"Confirmation is sent to shopper, order ID \", response.responseText);\r",
+                    "        console.log(\"sucess\");\r",
+                    "        //Ext.Msg.alert('Link Shortened', Ext.JSON.decode(response).toString(), function() {\r",
+                    "        //form.reset();\r",
+                    "        console.log(\"reset\");\r",
+                    "\r",
+                    "    },\r",
+                    "    failure: function(response) {\r",
+                    "        Ext.Msg.alert('Error', Ext.JSON.decode(response).toString(), function() {\r",
+                    "            //form.reset();\r",
+                    "            console.log(\"error\");\r",
+                    "        });\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "9bc80801-8a39-4f3d-bef9-d2ea94f30c50"
+        }
+    ]
+}

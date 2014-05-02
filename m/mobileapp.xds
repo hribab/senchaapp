@@ -1,0 +1,104 @@
+{
+    "name": "mobileapp",
+    "settings": {
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "urlPrefix": "http://localhost/mobileapp2/mobileapp",
+        "exportPath": "",
+        "buildShouldOverwriteIndex": true
+    },
+    "xdsVersion": "2.2.3",
+    "xdsBuild": 1039,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "touch23",
+    "topInstanceFileMap": {
+        "0fce3ca9-3f89-44f8-8dde-8d048432cba1": {
+            "paths": [
+                "metadata/view/MyPanel",
+                "app/view/override/MyPanel.js",
+                "app/view/MyPanel.js"
+            ],
+            "className": "MyPanel"
+        },
+        "335c0b22-cbef-42bf-a312-313182cf3f53": {
+            "paths": [
+                "metadata/store/orders",
+                "app/store/override/orders.js",
+                "app/store/orders.js"
+            ],
+            "className": "orders"
+        },
+        "be0fa5a9-1454-429c-8616-8dfb80e4b0d6": {
+            "paths": [
+                "metadata/store/products",
+                "app/store/override/products.js",
+                "app/store/products.js"
+            ],
+            "className": "products"
+        },
+        "46b41e16-2979-4590-9432-52cca5932620": {
+            "paths": [
+                "metadata/store/category",
+                "app/store/override/category.js",
+                "app/store/category.js"
+            ],
+            "className": "category"
+        },
+        "3f390ad3-b952-4f98-975d-32fe957af642": {
+            "paths": [
+                "metadata/model/orders",
+                "app/model/override/orders.js",
+                "app/model/orders.js"
+            ],
+            "className": "orders"
+        },
+        "ae15e31f-82ac-495f-8e39-747f3cd207cd": {
+            "paths": [
+                "metadata/model/products",
+                "app/model/override/products.js",
+                "app/model/products.js"
+            ],
+            "className": "products"
+        },
+        "e5145729-aa10-4e81-8170-95b1a286b1ba": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "a39c5cc4-e29d-40af-9156-21f22f05a720": {
+            "paths": [
+                "metadata/controller/MyController",
+                "app/controller/override/MyController.js",
+                "app/controller/MyController.js"
+            ],
+            "className": "MyController"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "0fce3ca9-3f89-44f8-8dde-8d048432cba1"
+        ],
+        "store": [
+            "335c0b22-cbef-42bf-a312-313182cf3f53",
+            "be0fa5a9-1454-429c-8616-8dfb80e4b0d6",
+            "46b41e16-2979-4590-9432-52cca5932620"
+        ],
+        "controller": [
+            "a39c5cc4-e29d-40af-9156-21f22f05a720"
+        ],
+        "model": [
+            "3f390ad3-b952-4f98-975d-32fe957af642",
+            "ae15e31f-82ac-495f-8e39-747f3cd207cd"
+        ],
+        "resource": [
+            "e5145729-aa10-4e81-8170-95b1a286b1ba"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

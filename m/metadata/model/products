@@ -1,0 +1,170 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "products"
+    },
+    "designerId": "ae15e31f-82ac-495f-8e39-747f3cd207cd",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "category"
+            },
+            "designerId": "c0000633-c7c0-466a-923a-bcc8486747c4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "productname"
+            },
+            "designerId": "683e5cb5-cf8c-4be7-b13d-fb9588fa1c1e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "productprice"
+            },
+            "designerId": "a4e56533-92e5-44fe-a33c-9d5689de6a81"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "setprice"
+            },
+            "designerId": "7176715f-6675-4d3e-9e53-5fbda34ca329"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "setquantity"
+            },
+            "designerId": "660ab9e2-6910-488b-97bd-42bab5075f4e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "productquantity"
+            },
+            "designerId": "ddd693ad-ece7-41b7-a049-6c9cfeff19b8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "button"
+            },
+            "designerId": "7d6015b2-ff43-4112-86bb-1a102a46852e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "index"
+            },
+            "designerId": "888126cb-1a4a-4680-856f-ea2288ca715c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "boolean"
+            },
+            "designerId": "836685db-eabf-4d85-9827-16745028b2a0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "total"
+            },
+            "designerId": "84ae1119-92fe-4c0b-96fc-f536b6a2cd6b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pb"
+            },
+            "designerId": "53126c20-3463-47cb-8e15-bf0023f81566"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ps"
+            },
+            "designerId": "50de580b-b0db-4735-bfbb-e164e6472b37"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "b"
+            },
+            "designerId": "8ce10256-9cb6-440d-ac3c-688f7f1acc4b"
+        }
+    ]
+}
